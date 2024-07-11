@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8">
+	<link rel="stylesheet" href="style.css">
+	<title>Access Agro | Sobre Nós</title>
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class='header_container'>
+	<div class='header_area' onmouseleave="solucoes_off()">
+		<div class='header_logo' onclick="window.location.href='index.html'"></div>
+		<div id='main_menu' class='header_links_container'>
+			<div class='header_hamburger header_link_button' onclick='hamburger_switch()'>&equiv;</div>
+			<div class='header_links_container' id='hamburger_float' onmouseleave="hamburger_off()">
+				<div class='header_link_button' onmouseenter="solucoes_off()" onclick="window.location.href='index.html'">Home</div>
+				<div class='header_link_divisor'>|</div>
+				<div class='header_link_button header_link_button_selected' onmouseenter="solucoes_off()" onclick="window.location.href='sobre.html'">Sobre Nós</div>
+				<div class='header_link_divisor'>|</div>
+				<div class='header_link_button'><span onmouseenter="solucoes_on()">Soluções
+					<div class='header_float_menu' id='Soluções Float' onmouseleave="solucoes_off()">
+						<div class='header_float_item' onclick="window.location.href='gestao_e_estrategia.html'">Gestão e Estratégia de Negócios</div>
+						<hr>
+						<div class='header_float_item' onclick="solucoes_off(); window.location.href='desenvolvimento_profissional.html'">Desenvolvimento Profissional<div class='header_float_item_small'>Treinamentos, Capacitação e Mentoring</div></div>
+					</div>
+				</div>
+				<div class='header_link_divisor'>|</div>
+				<div class='header_link_button' onmouseenter="solucoes_off()" onclick="solucoes_off(); window.location.href='parceiros.html'">Parceiros</div>
+				<div class='header_link_divisor'>|</div>
+				<div class='header_link_button' onmouseenter="solucoes_off()" onclick="window.location.href='contato.html'">Contato</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	solucoes_float = document.getElementById('Soluções Float');
+	main_menu = document.getElementById('main_menu');
+	hamburger_float = document.getElementById('hamburger_float');
+	solucoes_on = function() { solucoes_float.style.visibility = 'visible' }
+	solucoes_off = function() { solucoes_float.style.visibility = 'hidden' }
+	hamburger_switch = function () {
+		hamburger_float.style.visibility =
+		hamburger_float.style.visibility == 'visible' ? 'hidden' : 'visible'
+	}
+	hamburger_off = function () {
+		if (main_menu.classList.contains('on_hamburger')) {
+			hamburger_float.style.visibility = 'hidden'
+		}
+	}
+	toggle_hamburger = function () {
+		if (window.innerWidth > 900) {
+			main_menu.classList.add('no_hamburger')
+			main_menu.classList.remove('on_hamburger')
+			hamburger_float.style.visibility = 'visible';
+		}
+		else
+		{
+			main_menu.classList.remove('no_hamburger')
+			main_menu.classList.add('on_hamburger')
+			hamburger_float.style.visibility = 'hidden';
+		}
+	}
+	window.addEventListener('resize', toggle_hamburger)
+	toggle_hamburger()
+</script>
+
+<!-- TITLE -->
+<div class='title_banner'>
+	<div class='title_action_call'>Aproveite as vantagens<br>de ser um parceiro</div>
+	</div>
+</div>
+<div class='page_title'>Sobre a <b>Access Agro</b></div>
+
+<!-- PLAIN TEXT -->
+<div class='plain_text'>
+Somos uma Consultoria em Gestão Empresarial e Desenvolvimento Profissional.
+<br>Nosso negócio é desenvolver projetos customizados para as empresas no segmento AGRO.
+</div>
+
+<!-- FULL BOX -->
+<div class='full_box'>
+Fundada em 2023 por Guido Visintin Jr, sócio-diretor, com mais de 30 anos de experiência no setor, trabalhando como executivo em empresas como Shell, Cyanamid, BASF, DuPont, Corteva e IHARA.
+<br><br>
+<b>Especializado em Marketing, desenvolveu metodologia própria, fruto da experiência e participação de inúmeros projetos com grandes consultorias e dos trabalhos corporativos, para levar aos seus clientes atividades e soluções assertivas e de fácil implementação.</b>
+<br><br>
+A <b>Access Agro</b> também possui uma grade de conteúdo para treinamentos e capacitação de gestores e força de vendas da indústria e distribuição. Os treinamentos também são customizáveis, com abordagens teóricas e práticas, além de técnicas de comunicação e gamificação para aumentar o engajamento.
+</div>
+
+<!-- SPLIT IMAGE -->
+<div class='split_image'>
+	<div class='split_container'>
+		<div class='split_image_text split_image_left'>
+			<div class='section_title'>Nossos <b>Diferenciais</b></div>
+			<div class='plain_text left_align split_text'>
+Nosso principal diferencial está no fato de desenvolvermos trabalhos totalmente personalizados, onde todos os projetos são idealizados e executados pelo sócio-diretor da <b>Access Agro</b>.
+<br><br>Compromisso com a entrega e implementação dos projetos propostos, prezando o cumprimento dos prazos e suporte total aos clientes.
+<br><br>Desenvolvimento de trabalhos com foco nos resultados e com praticidade da implementação.
+			</div>
+		</div>
+		<div class='split_image_img split_image_right'></div>
+	</div>
+</div>
+
+<!-- PROPÓSITO -->
+<div class='proposito'>
+	<div class='proposito_container'>
+		<div class='section_title proposito_text'><b>PROPÓSITO</b></div>
+		<div class='plain_text proposito_text'>
+	Entregar soluções que atendam às necessidades dos clientes, por meio de informações, metodologias, ferramentas e orientações, trazendo melhoria operacional e resultados consistentes.
+		</div>
+	</div>
+</div>
+
+<!-- CONSULTORES -->
+<div class='page_title'><b>Consultores</b></div>
+<div class='facing_duo'>
+	<div class='duo_left'>
+		<div class='duo_picture guido'></div>
+		<h1>Guido Visintin Junior</h1>
+<a href='mailto:guido.visintin@accessagro.com.br'>guido.visintin@accessagro.com.br</a>
+<br><br>
+• Graduado em Agronomia – Luiz Meneghel – Bandeirantes/PR 1990
+<br>• 32 anos como executivo de marketing de grandes multinacionais no mercado de insumos agrícolas – Shell, Cyanamid, BASF, DuPont, Corteva e Ihara.
+<br>• Especialidade no desenvolvimento e implementação de estratégia de acesso ao mercado, modelos de gestão de programas de fidelização e CRM e campanhas de marketing;
+<br><br>
+		<div class='green_button cv_button' onclick='window.open("CV_Guido_Visintin_Jr.jpeg")'>EXIBIR CV COMPLETO</div>
+	</div>
+	<hr>
+	<div class='duo_right'>
+		<div class='duo_picture fabiana'></div>
+		<h1>Fabiana Muniz Visintin</h1>
+<a href='mailto:fabivisintin@icloud.com@accessagro.com.br'>fabivisintin@icloud.com</a>
+<br><br>
+• Graduado em Comunicação Social – Propaganda e Marketing – Universidade Paulista SP 1992
+<br>• 18 anos como executiva de Marketing e Promoção, atuando na gestão de equipes em empresas e veículos de comunicação como TV Globo, Grupo Pão de Açúcar, Interchange – Empresa Tecnologia City Bank Group,  Americanas.com, MTV Networks LatinAmerica, Toyota e Telefônica Empresas.
+<br><br>
+		<div class='green_button cv_button' onclick='window.open("CV_Fabiana_Muniz_Visintin.jpeg")'>EXIBIR CV COMPLETO</div>
+	</div>
+</div>
+
+<!-- FOOTER -->
+<div class='footer_background extra_margin'>
+	<div class='link_image up_arrow' onclick="window.scrollTo({top: 0, behavior: 'smooth'});"></div>
+	<div class='footer_container'>
+		<div class='footer_logo'></div>
+		<hr>
+		<div class='footer_bar'>
+			<div class='footer_links'>
+				<h1>Legal</h1>
+				<span class='link_text'>Preferências de Cookies</span>
+				<br>
+				<span class='link_text'>Notificações Legais</span>
+			</div>
+			<div class='footer_social_network'>
+				<h1>Redes Sociais</h1>
+				<span class='link_image linkedin' onclick="window.open('https://www.linkedin.com/in/guido-visintin-jr-19b75b27/')"></span>
+				<span class='link_image instagram' onclick="window.open('https://www.instagram.com/accessagroconsultoria')"></span>
+			</div>
+			<div class='footer_contact_info'>
+				<span class='link_text' onclick='window.open("mailto:guido.visintin@accessagro.com.br")'>
+				guido.visintin@accessagro.com.br
+				</span>
+			</div>
+		</div>
+		<hr>
+		<div class='copyright'>
+Copyright ©2024 Access Agro do Brasil Ltda.
+		</div>
+	</div>
+</div>
+
+<!-- WHATSAPP -->
+<div class='whatsapp' onclick='window.location.href="https://wa.me/5511992769598"'></div>
+
+</body>
+</html>

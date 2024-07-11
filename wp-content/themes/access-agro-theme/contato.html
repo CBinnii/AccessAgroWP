@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8">
+	<link rel="stylesheet" href="style.css">
+	<title>Access Agro | Contato</title>
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class='header_container'>
+	<div class='header_area' onmouseleave="solucoes_off()">
+		<div class='header_logo' onclick="window.location.href='index.html'"></div>
+		<div id='main_menu' class='header_links_container'>
+			<div class='header_hamburger header_link_button' onclick='hamburger_switch()'>&equiv;</div>
+			<div class='header_links_container' id='hamburger_float' onmouseleave="hamburger_off()">
+				<div class='header_link_button' onmouseenter="solucoes_off()" onclick="window.location.href='index.html'">Home</div>
+				<div class='header_link_divisor'>|</div>
+				<div class='header_link_button' onmouseenter="solucoes_off()" onclick="window.location.href='sobre.html'">Sobre Nós</div>
+				<div class='header_link_divisor'>|</div>
+				<div class='header_link_button'><span onmouseenter="solucoes_on()">Soluções
+					<div class='header_float_menu' id='Soluções Float' onmouseleave="solucoes_off()">
+						<div class='header_float_item' onclick="window.location.href='gestao_e_estrategia.html'">Gestão e Estratégia de Negócios</div>
+						<hr>
+						<div class='header_float_item' onclick="solucoes_off(); window.location.href='desenvolvimento_profissional.html'">Desenvolvimento Profissional<div class='header_float_item_small'>Treinamentos, Capacitação e Mentoring</div></div>
+					</div>
+				</div>
+				<div class='header_link_divisor'>|</div>
+				<div class='header_link_button' onmouseenter="solucoes_off()" onclick="solucoes_off(); window.location.href='parceiros.html'">Parceiros</div>
+				<div class='header_link_divisor'>|</div>
+				<div class='header_link_button header_link_button_selected' onmouseenter="solucoes_off()" onclick="window.location.href='contato.html'">Contato</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	solucoes_float = document.getElementById('Soluções Float');
+	main_menu = document.getElementById('main_menu');
+	hamburger_float = document.getElementById('hamburger_float');
+	solucoes_on = function() { solucoes_float.style.visibility = 'visible' }
+	solucoes_off = function() { solucoes_float.style.visibility = 'hidden' }
+	hamburger_switch = function () {
+		hamburger_float.style.visibility =
+		hamburger_float.style.visibility == 'visible' ? 'hidden' : 'visible'
+	}
+	hamburger_off = function () {
+		if (main_menu.classList.contains('on_hamburger')) {
+			hamburger_float.style.visibility = 'hidden'
+		}
+	}
+	toggle_hamburger = function () {
+		if (window.innerWidth > 900) {
+			main_menu.classList.add('no_hamburger')
+			main_menu.classList.remove('on_hamburger')
+			hamburger_float.style.visibility = 'visible';
+		}
+		else
+		{
+			main_menu.classList.remove('no_hamburger')
+			main_menu.classList.add('on_hamburger')
+			hamburger_float.style.visibility = 'hidden';
+		}
+	}
+	window.addEventListener('resize', toggle_hamburger)
+	toggle_hamburger()
+</script>
+
+<!-- TITLE -->
+<div class='title_banner'>
+	<div class='title_action_call'>Aproveite as vantagens<br>de ser um parceiro</div>
+	</div>
+</div>
+
+<!-- CONTATO -->
+<div class='contato_container contato_container_on_page'>
+	<div class='contato_image'></div>
+	<div class='page_title title_white'>Entre em <b>Contato</b></div>
+	<div class='contato_form_container contato_form_on_page'>
+		<div class='contato_header'><b>Qual seu objetivo?</b><br>Conte-nos como podemos lhe ajudar!</div>
+		<div class='contato_form'>
+			<form id="contact-form" method="post" action="send_contact.php">
+			<input type="text" id="nome" name="nome" autocomplete="name" placeholder="Nome*">
+			<br>
+			<input type="email" id="email" name="email" autocomplete="email" placeholder="E-mail*">
+			<br>
+			<input type="text" id="assunto" name="assunto" placeholder="Assunto*">
+			<br>
+			<textarea id="mensagem" name="mensagem" placeholder="Mensagem*"></textarea>
+			<br>
+			<input type="submit" value="Enviar">
+			</form>
+		</div>
+	</div>
+</div>
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var formData = new FormData(this);
+    fetch('send_contact.php', {
+        method: 'POST',
+        body: formData,
+    })
+   .then(response => response.text())
+   .then(data => {
+        if (data === 'success') {
+            alert('Mensagem enviada.');
+        } else {
+            alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
+        }
+    })
+   .catch(error => {
+        console.error('Error:', error);
+				alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
+    });
+});
+</script>
+
+<!-- FOOTER -->
+<div class='footer_background'>
+	<div class='link_image up_arrow' onclick="window.scrollTo({top: 0, behavior: 'smooth'});"></div>
+	<div class='footer_container'>
+		<div class='footer_logo'></div>
+		<hr>
+		<div class='footer_bar'>
+			<div class='footer_links'>
+				<h1>Legal</h1>
+				<span class='link_text'>Preferências de Cookies</span>
+				<br>
+				<span class='link_text'>Notificações Legais</span>
+			</div>
+			<div class='footer_social_network'>
+				<h1>Redes Sociais</h1>
+				<span class='link_image linkedin' onclick="window.open('https://www.linkedin.com/in/guido-visintin-jr-19b75b27/')"></span>
+				<span class='link_image instagram' onclick="window.open('https://www.instagram.com/accessagroconsultoria')"></span>
+			</div>
+			<div class='footer_contact_info'>
+				<span class='link_text' onclick='window.open("mailto:guido.visintin@accessagro.com.br")'>
+				guido.visintin@accessagro.com.br
+				</span>
+			</div>
+		</div>
+		<hr>
+		<div class='copyright'>
+Copyright ©2024 Access Agro do Brasil Ltda.
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
