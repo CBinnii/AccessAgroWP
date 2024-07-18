@@ -1,0 +1,94 @@
+
+
+.section-portfolio {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    @media screen and (max-width: 991px) {
+        margin-bottom: 16px;
+    }
+
+    .box-what-portfolio {
+        position: relative;
+
+        .swiper-portfolio {
+            background: transparent;
+
+            @media screen and (max-width: 991px) {
+                overflow: hidden;
+                box-shadow: 6px 6px 24px rgba(0, 0, 0, 0.2);
+                border-radius: 16px;
+            }
+
+            .swiper-wrapper {
+                padding: 30px 0;
+
+                @media screen and (max-width: 991px) {
+                    padding: 0;
+                }
+                
+                .swiper-slide {
+                    display: flex;
+                    padding: 24px;
+                    min-height: 200px;
+                    align-items: center;
+                    border-radius: 16px;
+                    background: url("../images/marca-dagua.png") #00AB54 right bottom no-repeat;
+                    background-size: 150px;
+
+                    @media screen and (max-width: 991px) {
+                        background-size: 150px;
+                    }
+
+                    .box-portfolio {
+                        display: flex;
+                        height: 100%;
+                        align-items: center;
+        
+                        p {
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 24px;
+                            letter-spacing: -0.01em;
+                            color: #F2FAEF;
+                            margin: 0;
+
+                            @media screen and (max-width: 991px) {
+                                font-size: 14px;
+                                line-height: 17px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .swiper-pagination-bullets {
+        padding: 24px 0;
+        
+        &.swiper-pagination-horizontal {
+            position: relative;
+            bottom: initial;
+            top: initial;
+            left: initial;
+        }
+    
+        .swiper-pagination-bullet {
+            background: #F5F5F5;
+            width: 20px;
+            height: 20px;
+            opacity: 1;
+            border: 1px solid #888;
+    
+            @media screen and (max-width: 991px) {
+                width: 15px;
+                height: 15px;
+            }
+    
+            &.swiper-pagination-bullet-active {
+                background: #0049B1;
+            }
+        }
+    }
+}

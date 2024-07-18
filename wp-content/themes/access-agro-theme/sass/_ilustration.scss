@@ -1,0 +1,159 @@
+.illustrations {
+	position: relative;
+	color: #FFF;
+	font-family: Montserrat, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
+	letter-spacing: -0.24px;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+
+.home_left {
+	height: 343px;
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	margin-right: 15px;
+	min-width: 49%;
+}
+
+.home_right {
+	position: relative;
+	height: 343px;
+	display: inline-block;
+	margin-left: 15px;
+	margin-top: 20px;
+	width: 100%;
+	min-width: 700px;
+}
+
+@media (max-width: 680px) {
+	.home_left {
+        right: -90px;
+        min-width: inherit;
+        left: unset;
+        margin: 0;
+	}
+
+	.home_left_strip {
+		width: 100% !important;
+		left: -100%;
+	}
+
+	.home_left_text {
+		text-align: left;
+		left: -60px;
+	}
+
+	.home_right {
+		left: -120px;
+        min-width: inherit;
+	}
+	
+	.home_right_text {
+		text-align: right;
+		left: unset !important;
+		right: -90px;
+	}
+
+	.home_right_strip {
+		width: 100% !important;
+		right: -100%;
+		left: unset !important;
+	}
+}
+
+@media (min-width: 900px) {
+	.home_left {
+		margin-right: 20%;
+	}
+
+	.home_right {
+		margin-left: 20%;
+	}
+}
+
+@media (min-width: 1323px) {
+	.illustrations {
+		flex-wrap: unset;
+	}
+
+	.home_left {
+		margin: 0 10px 0 0;
+	}
+
+	.home_right {
+		margin: 0 0 0 10px;
+	}
+}
+
+.home_left_strip {
+	background: #00AB54;
+	z-index: -10;
+	height: 312px;
+	width: calc(100% - 700px);
+	position: absolute;
+	bottom: 0;
+	right: 700px;
+}
+
+.home_right_strip {
+	background: #0049B1;
+	z-index: -10;
+	height: 312px;
+	width: calc(100% - 700px);
+	position: absolute;
+	bottom: 0;
+	left: 700px;
+}
+
+.home_left_ilustration {
+	height: 100%;
+	background-image: url('../images/ilus_green.png');
+	background-size: unset;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-position-x: right;
+}
+
+.home_right_ilustration {
+	height: 100%;
+	background-image: url('../images/ilus_business.png');
+	background-size: unset;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-position-x: left;
+}
+
+.illustrations h1 {
+	font-family: Roboto, sans-serif;
+	font-size: 37px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 43px;
+	letter-spacing: -0.555px;
+	margin: 0;
+	margin-bottom: 25px;
+}
+
+.home_left_text,
+.home_right_text {
+	position: absolute;
+	top: 83px;
+	bottom: 29px;
+	width: 315px;
+}
+
+.home_left_text {
+	text-align: left;
+	right: 300px;
+}
+
+.home_right_text {
+	text-align: right;
+	left: 320px;
+}

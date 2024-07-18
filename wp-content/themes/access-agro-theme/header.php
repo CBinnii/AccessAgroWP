@@ -1,19 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php echo get_the_title(); ?> - Bívar Clinic</title>
-        <link rel="icon" type="image/x-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon.png">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8">
+		<title>Access Agro | <?php echo get_the_title(); ?></title>
+		<link rel="icon" type="image/x-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon.ico">
         <?php wp_head(); ?>
-        <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/style.css">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.bundle.min.js"></script>
+		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/style.css">
     </head>
 
     <body>
@@ -22,11 +17,9 @@
 				<div class="container">
 					<div class="container-fluid d-flex p-0">
 						<a class="navbar-brand" href="<?php echo get_home_url(); ?>">
-							<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-white.jpg" alt="Logo Bívar Clinic">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/header_logo.png" alt="Access Agro Logo">
 						</a>
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-							data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-							aria-expanded="false" aria-label="Toggle navigation">
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<div class="menu-button" id="menu-button" onclick="menuMobile()">
 								<div class="bar"></div>
 								<div class="bar"></div>
@@ -50,5 +43,3 @@
 				</div>
 			</nav>
 		</header>
-
-        <section class="main">

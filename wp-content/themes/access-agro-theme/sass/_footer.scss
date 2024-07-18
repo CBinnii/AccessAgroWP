@@ -1,0 +1,265 @@
+
+
+.contato_image {
+	width: 100%;
+	height: 100%;
+	background-image: url('../images/contato_fundo.jpeg');
+	background-size: cover;
+  background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+}
+
+.contato_container {
+	overflow: hidden;
+	width: 100%;
+	height: 750px;
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.contato_container_on_page {
+	margin-top: 75px;
+	height: 835px;
+}
+
+.contato_container b {
+	text-transform: uppercase;
+	font-weight: 900;
+}
+
+.contato_form_container {
+	position: absolute;
+	max-width: min(74%, 576px);
+	overflow: hidden;
+	max-height: 657px;
+	top: 60px;
+	left: auto;
+	right: auto;
+	border-radius: 15px;
+	border: 1px solid #ffffff;
+	background: rgba(112, 151, 188, 0.50);
+	box-shadow: -4px 4px 4px 0px rgba(255, 255, 255, 0.10);
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-content: center;
+	justify-content: space-between;
+	padding: 46px 55px 20px 55px;
+}
+
+.contato_form_on_page {
+	margin-top: 100px;
+}
+
+.contato_form_container, .contato_form_container input, .contato_form_container textarea {
+	font-family: Montserrat, sans-serif;
+	letter-spacing: -0.3px;
+	font-weight: 600;
+	line-height: 1.3em;
+	font-size: 20px;
+	color: #ffffff;
+}
+
+.contato_form_container input, .contato_form_container textarea {
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: -0.27px;
+}
+
+.contato_header {
+	margin-bottom: 19px;
+}
+
+.contato_form {
+	font-size: 18px;
+}
+
+.contato_form input, .contato_form textarea {
+	padding-left: 12px;
+	width: 522px;
+	height: 44px;
+	margin-top: 19px;
+	border: 1px solid #fff;
+	background: #fff0;
+	max-width: min(100%, 522px);
+}
+
+.contato_form input::placeholder, .contato_form textarea::placeholder {
+	color: #fff6;
+}
+
+.contato_form textarea {
+	height: 128px;
+	padding-top: 15px;
+}
+
+input[type="submit"] {
+	width: 168px;
+	height: 45px;
+	border-radius: 18.5px;
+	background: #FFF;
+	font-family: Roboto, sans-serif;
+	letter-spacing: -0.225px;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 15px;
+	color: #00A852;
+	text-align: center;
+	margin-bottom: 10px;
+	min-width: unset;
+	cursor: pointer;
+	padding: 1px 4px;
+}
+
+.contato_form_container input:focus-visible, .contato_fundo textarea:focus-visible {
+	background: #fff1;
+}
+
+.footer_background {
+	position: absolute;
+	background: #242424;
+	width: 100%;
+}
+
+.footer_container {
+	width: 100%;
+	max-width: var(--screen-width);
+	margin: 0 auto;
+}
+
+.footer_logo {
+	width: 310px;
+	height: 101px;
+	background-image: url('../images/footer_logo.png');
+	background-size: contain;
+  background-repeat: no-repeat;
+	background-position: center;
+	margin: 60px auto 30px;
+}
+
+.footer_container hr {
+	margin: 12px 0;
+	height: 1px;
+	background: #fff;
+	border: 0;
+}
+
+.footer_bar {
+	margin: 0 30px;
+	padding-top: 15px;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.footer_bar, .footer_bar h1 {
+	color: #fff;
+	font-family: Roboto, sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: -0.225px;
+	line-height: 1.5em;
+}
+
+.footer_bar h1 {
+	font-weight: 700;
+	font-size: 18px;
+	margin-bottom: 0.5em;
+	letter-spacing: -0.27px;
+}
+
+.footer_links {
+	height: 188px;
+	width: 265px;
+	min-width: 30%;
+}
+
+.footer_social_network {
+	height: 188px;
+}
+
+.footer_contact_info {
+	font-size: 25px;
+	font-weight: 600;
+	letter-spacing: -0.375px;
+	padding-bottom: 20px;
+	text-align: end;
+}
+
+@media (max-width: 880px) {
+	.footer_contact_info {
+		width: 100%;
+		font-size: 18px;
+	}
+}
+
+.title_white {
+	z-index: 10;
+	color: #ffffff;
+	margin-top: 55px;
+}
+
+.link_image {
+	display: inline-block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 27px;
+	height: 27px;
+	margin-right: 5px;
+	border-radius: 8px;
+}
+
+.up_arrow {
+	position: absolute;
+	height: 58px;
+	width: 48px;
+	top: -24px;
+	background: #fff;
+	background-image: url('../images/up_arrow.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+	z-index: 10;
+	left: calc(50% - 24px);
+}
+
+.link_image:hover {
+	box-shadow: 0 0 10px #fff6;
+	cursor: pointer;
+}
+
+.linkedin {
+	background-image: url('../images/link_linkedin.png');
+}
+
+.instagram {
+	background-image: url('../images/link_instagram.png');
+}
+
+.copyright {
+	color: #fff;
+	text-align: center;
+	font-family: Roboto, sans-serif;
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: -0.18px;
+	height: 42px;
+	line-height: 2.5em;
+}
+
+.link_text {
+	cursor: pointer;
+}
+
+.link_text:hover {
+	text-shadow: 0 0 10px #fff6;
+}
