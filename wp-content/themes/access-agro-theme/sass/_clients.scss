@@ -62,3 +62,21 @@
         }
     }
 }
+
+.client_logos {
+	margin: 74px auto 0;
+	width: 100%;
+	max-width: var(--screen-width);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.client_logos img {
+	max-width: 244px;
+	max-height: 100px;
+	mix-blend-mode: darken;
+	margin: 10px 20px;
+}

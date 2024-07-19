@@ -50,7 +50,7 @@
 				<div class='footer_bar'>
 					<div class='footer_links'>
 						<h1>Legal</h1>
-						<span class='link_text'>Preferências de Cookies</span>
+						<span class='link_text' onclick="window.open('politica-de-privacidade')">Preferências de Cookies</span>
 						<br>
 						<span class='link_text'>Notificações Legais</span>
 					</div>
@@ -140,6 +140,135 @@
 				},
 			});
 		</script>
+
+		<script>
+			solutions = [
+				{
+					picture: 'ico_mercado',
+					caption: 'Estratégia de Acesso ao Mercado',
+					text: 'Entendimento e recomendações do melhor modelo de acesso e atividades agregadoras para aumento da penetração de mercado',
+				},
+				{
+					picture: 'ico_territorio',
+					caption: 'Gestão de Território',
+					text: 'Processo de visualização do ambiente competitivo para melhorar a gestão dos territórios de vendas e aumentar a participação de mercado',
+				},
+				{
+					picture: 'ico_crm',
+					caption: 'Estratégia de Gestão de Clientes e CRM',
+					text: 'Sustentada pelos pilares - estratégia, processos e tecnologia, visa planejar e acionar o time de vendas na prospecção, desenvolvimento e retenção de clientes',
+				},
+				{
+					picture: 'ico_relacionamento',
+					caption: 'Programa de Relacionamento',
+					text: 'Estimular os clientes a atingirem o orçamento e/ou recompra através de ambiente e regras atrativas e de resultados financeiros positivos',
+				},
+				{
+					picture: 'ico_business_plan',
+					caption: 'Criação e implantação de Business Plan',
+					text: 'Desenvolvimento de plano de negócio, alinhado com a estratégia da empresa e suportado pelos pilares – diagnóstico, diretrizes, plano de ação e monitoramento',
+				},
+				{
+					picture: 'ico_forca_vendas',
+					caption: 'Dimensionar a Força de Vendas',
+					text: 'Definir os critérios, a quantidade, modelo de atendimento, dimensionamento e o perfil adequado da FV para cada território',
+				},
+				{
+					picture: 'ico_distribuicao',
+					caption: 'Política de Distribuição',
+					text: 'Desenvolvimento de políticas comerciais e de relacionamento com todas as rotas de acesso ao mercado',
+				},
+				{
+					picture: 'ico_marketing',
+					caption: 'Plano de Marketing',
+					text: 'Guia prático, levando em consideração a realidade da empresa, que consiste em desenvolver estratégias e ações para atingir os objetivos de negócios',
+				},
+				{
+					picture: 'ico_pesquisa_satisfacao',
+					caption: 'Pesquisa de satisfação de clientes',
+					text: 'Apoiar no desenvolvimento de pesquisas de satisfação junto aos clientes para avaliação da FV e outros públicos, através de plataforma e relatórios amigáveis',
+				},
+				{
+					picture: 'ico_ideias',
+					caption: 'Workshops, fóruns e geração de ideias',
+					text: 'Método e ambiente de encorajamento de discussões estratégicas, identificação de oportunidades e desafios com público interno e/ou externo',
+				},
+			];
+			solutions_array = [];
+			for (let i in solutions) {
+				card = solutions[i];
+				div_card = document.createElement('div');
+				div_card.className = 'home_card';
+				img = document.createElement('div');
+				img.className = 'gestao_estrategia_img';
+				img.classList.add(card.picture);
+				div_card.appendChild(img);
+				txt = document.createElement('div');
+				txt.className = 'gestao_estrategia_txt';
+				txt.innerHTML = '<h1>' + card.caption + '</h1>' +
+					card.text;
+				div_card.appendChild(txt);
+				solutions_array.push(div_card);
+			}
+			for (let i in solutions_array) {
+				home_carousel_window.appendChild(solutions_array[i]);
+			}
+			cp = 0;
+			lp = solutions_array.length;
+			function set_next_solution() {
+				cp = cp >= lp - 1 ? 0 : cp + 1;
+				set_solution();
+			}
+			function set_previous_solution() {
+				cp = cp <= 0 ? lp - 1 : cp - 1;
+				set_solution();
+			}
+			home_classes = [
+				'position_stage',
+				'position_out_left',
+				'position_out_right',
+				'position_one',
+				'position_two',
+				'position_three',
+				'position_four'
+			];
+			function set_solution() {
+				[lll, ll, l, r, rr, rrr] = [
+					cp,
+					cp + 1 > lp - 1 ? cp + 1 - lp : cp + 1,
+					cp + 2 > lp - 1 ? cp + 2 - lp : cp + 2,
+					cp + 3 > lp - 1 ? cp + 3 - lp : cp + 3,
+					cp + 4 > lp - 1 ? cp + 4 - lp : cp + 4,
+					cp + 5 > lp - 1 ? cp + 5 - lp : cp + 5,
+				];
+				card_lll = solutions_array[lll];
+				card_ll = solutions_array[ll];
+				card_l = solutions_array[l];
+				card_r = solutions_array[r];
+				card_rr = solutions_array[rr];
+				card_rrr = solutions_array[rrr];
+				for (let h in home_classes) {
+					card_lll.classList.remove(home_classes[h]);
+					card_ll.classList.remove(home_classes[h]);
+					card_l.classList.remove(home_classes[h]);
+					card_r.classList.remove(home_classes[h]);
+					card_rr.classList.remove(home_classes[h]);
+					card_rrr.classList.remove(home_classes[h]);
+				}
+				card_lll.classList.add('position_out_left');
+				card_ll.classList.add('position_stage');
+				card_ll.classList.add('position_one');
+				card_l.classList.add('position_stage');
+				card_l.classList.add('position_two');
+				card_r.classList.add('position_stage');
+				card_r.classList.add('position_three');
+				card_rr.classList.add('position_stage');
+				card_rr.classList.add('position_four');
+				card_rrr.classList.add('position_out_right')
+			}
+			set_solution();
+		</script>
+
 	</body>
 
 </html>

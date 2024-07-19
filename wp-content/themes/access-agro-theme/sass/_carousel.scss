@@ -1,0 +1,156 @@
+
+
+.carousel_text {
+	width: 100%;
+	max-width: 880px;
+	margin: 0px auto 0;
+	margin-bottom: 85px;
+	position: relative;
+	overflow: hidden;
+}
+
+.carousel_window {
+	width: var(--screen-width);
+	display: flex;
+	align-items: center;
+	text-align: center;
+	height: 300px;
+	overflow: hidden;
+}
+
+@media (max-width: 650px) {
+	.carousel_window {
+		height: 320px;
+	}
+}
+
+@media (max-width: 540px) {
+	.carousel_window {
+		height: 400px;
+	}
+}
+
+@media (max-width: 400px) {
+	.carousel_window {
+		height: 500px;
+	}
+}
+
+.carousel_counter {
+	cursor: pointer;
+	position: absolute;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	bottom: 0;
+}
+
+.carousel_text_card {
+	color: #3F4D4D;
+	font-family: Montserrat, sans-serif;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 1.2em;
+	letter-spacing: -0.375px;
+	position: absolute;
+	width: 90%;
+	left: 5%;
+	text-align: left;
+	margin-top: -25px;
+}
+
+.carousel_text_card li {
+	margin: 30px 0;
+}
+
+.carousel_position_0 {
+	margin-left: -1323px;
+	opacity: 0;
+	transition: margin 2s ease, opacity 1s ease;
+}
+
+.carousel_position_1 {
+	opacity: 1;
+	transition: margin 2s ease, opacity 3s ease;
+}
+
+.carousel_position_2 {
+	margin-left: 1323px;
+	opacity: 0;
+}
+
+.carousel_count {
+	display: inline-block;
+	border-radius: 19px;
+	width: 19px;
+	height: 19px;
+	margin: 0 8px;
+	border: 1.0px solid #888;
+}
+
+.carousel_count_selected {
+	background: #9ACA3C;
+	border: 0;
+	width: 21px;
+	height: 21px;
+}
+
+.carousel_container_logo {
+	height: 300px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	margin-bottom: 65px;
+}
+
+.carousel_counter_logo {
+	position: absolute;
+	bottom: 0;
+	display: inline-flex;
+	margin-bottom: 50px;
+}
+
+.carousel_counter_logo div {
+	width: 19px;
+	height: 19px;
+	border: 1px solid #888;
+	border-radius: 32px;
+	background: none;
+	margin: 8px;
+}
+
+.carousel_counter_logo div:hover {
+	cursor: pointer;
+}
+
+.carousel_counter_logo_active {
+	background: #9ACA3C !important;
+	border-color: #9ACA3C !important;
+}
+
+.carousel_base_logo {
+	width: 300px;
+	height: 170px;
+	max-height: 170px;
+	max-width: 300px;
+	transition: all 3s ease;
+	mix-blend-mode: darken;
+	position: absolute;
+}
+
+.carousel_position_logo_L {
+	margin-right: 50%;
+	opacity: 0;
+}
+
+.carousel_position_logo_R {
+	margin-left: 50%;
+	opacity: 0;
+}
+
+.carousel_position_logo_M {
+	margin-left: 100%;
+	margin-right: 100%;
+	opacity: 1;
+}

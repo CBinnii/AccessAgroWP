@@ -7,7 +7,7 @@
 				<div class='footer_bar'>
 					<div class='footer_links'>
 						<h1>Legal</h1>
-						<span class='link_text'>Preferências de Cookies</span>
+						<span class='link_text' onclick="window.open('politica-de-privacidade')">Preferências de Cookies</span>
 						<br>
 						<span class='link_text'>Notificações Legais</span>
 					</div>

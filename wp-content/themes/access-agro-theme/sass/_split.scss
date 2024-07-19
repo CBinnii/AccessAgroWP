@@ -1,0 +1,50 @@
+
+
+.split_image {
+	min-height: 462px;
+	width: 100%;
+	background: #0049B1;
+	position: relative;
+}
+
+.split_image_text {
+	padding-right: 40px;
+}
+
+.split_container {
+	max-width: var(--screen-width);
+	margin: 0 auto;
+	display: flex;
+}
+
+.split_text {
+	color: #fff;
+	margin-top: 50px;
+	line-height: 23px;
+}
+
+.section_title {
+	color: #fff;
+	margin: 43px 0 0 0;
+	text-align: left;
+}
+
+.split_image_left {
+	margin: 0;
+	padding-top: 1em;
+	padding-left: 30px;
+	width: 550px;
+}
+
+.split_image_img {
+	position: absolute;
+	background-image: url('../images/sobre_nos.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	top: 0;
+	background-position: center center;
+	right: 0;
+	height: 100%;
+	width: 50%;
+	max-width: calc(100vw - 630px);
+}

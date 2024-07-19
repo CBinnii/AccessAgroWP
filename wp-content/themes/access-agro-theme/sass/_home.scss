@@ -1,0 +1,92 @@
+.home_desenvolvimento_profissional {
+	background: #d9d9d9;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.home_board {
+	background: #d9d9d9;
+	padding-bottom: 50px;
+}
+
+.home_logos {
+	margin-bottom: 90px;
+}
+
+.home_title {
+	padding-top: 80px;
+	padding-bottom: 20px;
+}
+
+.home_carousel_window {
+	position: relative;
+	width: 1408px;
+	height: 400px;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-top: 30px;
+	max-width: 100%;
+}
+
+.home_card {
+	top: 0;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0;
+	width: var(--home-card-w);
+	;
+	max-width: var(--home-card-w);
+	opacity: 0;
+	left: -260px;
+	transition: all 1s ease;
+	min-width: 260px;
+}
+
+.home_arrow {
+	background: #0049b1;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	margin: 0;
+	top: 200px;
+	width: 46px;
+	height: 46px;
+	border: 1px solid #09AE4C;
+	cursor: pointer;
+	z-index: 10;
+}
+
+.home_arrow_left {
+	background-image: url('../images/arr_left_white.svg');
+	left: 0;
+}
+
+.home_arrow_right {
+	background-image: url('../images/arr_right_white.svg');
+	right: 0;
+}
+
+.home_intro {
+	max-width: 848px;
+}
+
+.home_ilus_text {
+	color: #FFF;
+	font-family: Montserrat, sans-serig;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
+	letter-spacing: -0.24px;
+}
+
+.home_ilus_text h1 {
+	color: #FFF;
+	font-family: Roboto, sans-serif;
+	font-size: 37px;
+	font-weight: 700;
+	line-height: 35px;
+	letter-spacing: -0.555px;
+}

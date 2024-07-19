@@ -1,0 +1,141 @@
+.proposito {
+	width: 100%;
+	background: #00ab54;
+	padding-bottom: 26px;
+}
+
+.proposito_text {
+	color: #fff;
+	text-align: center;
+	margin-top: 0;
+	margin-top: 21px;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+
+@media (max-width: 950px) {
+	.proposito_text {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+}
+
+.proposito_container {
+	max-width: var(--screen-width);
+	margin: 0 auto;
+	padding-top: 38px;
+}
+
+.facing_duo {
+	color: #3F4D4D;
+	font-family: Montserrat, sans-serif;
+	font-size: 19px;
+	font-weight: 400;
+	line-height: 25px;
+	letter-spacing: -0.3px;
+	position: relative;
+	display: flex;
+	max-width: var(--screen-width);
+	margin: 0 auto;
+
+	@media screen and (max-width: 767px) {
+		flex-wrap: wrap;
+	}
+	
+	h1 {
+		font-style: normal;
+		color: #3F4D4D;
+		font-size: 25px;
+		font-weight: 700;
+		line-height: 25px;
+		letter-spacing: -0.375px;
+		margin-bottom: 8px;
+	}
+	
+	a {
+		color: #0049B1;
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 25px;
+		letter-spacing: -0.3px;
+		text-decoration-line: underline;
+		word-break: break-all;
+		margin-bottom: 8px;
+	}
+
+	.duo {
+		width: 50%;
+
+		@media screen and (max-width: 767px) {
+			width: 100%;
+		}
+
+		.duo_content {
+			min-height: 670px;
+		}
+
+		ul {
+			// padding-left: 32px;
+
+			li {
+				list-style: disc;
+				list-style-position: inside;
+				margin-bottom: 8px;
+			}
+		}
+
+		p {
+			margin-bottom: 16px;
+		}
+
+		&:first-of-type {
+			text-align: right;
+			margin-right: 30px;
+
+			@media screen and (max-width: 767px) {
+				text-align: center;
+				margin: 0 16px;
+			}
+		}
+
+		&:last-of-type {
+			text-align: left;
+			margin-left: 30px;
+
+			@media screen and (max-width: 767px) {
+				text-align: center;
+				margin: 0 16px;
+			}
+		}
+	}
+	
+	.duo_picture {
+		width: 259px;
+		height: 259px;
+		min-width: 180px;
+		min-height: 180px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		display: inline-block;
+		margin-top: 45px;
+		margin-bottom: 25px;
+	}
+	
+	hr {
+		border-style: none dashed none none;
+		border-width: 0.5px;
+		border-color: #9ACA3C;
+		width: 0.5px;
+		height: 427px;
+		margin: 30px 0;
+		position: relative;
+		top: 330px;
+	}
+}
+
+@media (max-width: 926px) {
+	.facing_duo hr {
+		display: none;
+	}
+}

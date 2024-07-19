@@ -6,32 +6,25 @@
 	get_header();
 ?>
 
-	<!-- Swiper -->
-	<div class="swiper swiper-home">
-		<div class="swiper-wrapper">
-			<div class="swiper-slide" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/title_banner_1.png')">
-				<div class="container">
-					<h1>CONSULTORIA EM GESTÃO <br>E TREINAMENTO PARA O AGRONEGÓCIO</h1>
-				</div>
+	<?php if( have_rows('banner') ): ?>
+		<div class="swiper swiper-home">
+			<div class="swiper-wrapper">
+				<?php
+					while( have_rows('banner') ) : the_row();
+
+					$imagem_banner = get_sub_field('imagem_banner');
+					$texto_banner = get_sub_field('texto_banner');
+				?>
+					<div class="swiper-slide" style="background-image: url('<?php echo $imagem_banner; ?>')">
+						<div class="container">
+							<h1><?php echo $texto_banner; ?></h1>
+						</div>
+					</div>
+				<?php endwhile; ?>
 			</div>
-			<div class="swiper-slide" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/title_banner_2.png')">
-				<div class="container">
-					<h1>CONSULTORIA EM GESTÃO <br>E TREINAMENTO PARA O AGRONEGÓCIO</h1>
-				</div>
-			</div>
-			<div class="swiper-slide" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/title_banner_6.png')">
-				<div class="container">
-					<h1>CONSULTORIA EM GESTÃO <br>E TREINAMENTO PARA O AGRONEGÓCIO</h1>
-				</div>
-			</div>
-			<div class="swiper-slide" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/title_banner_3.png')">
-				<div class="container">
-					<h1>CONSULTORIA EM GESTÃO <br>E TREINAMENTO PARA O AGRONEGÓCIO</h1>
-				</div>
-			</div>
+			<div class="swiper-pagination swiper-pagination-slider-home"></div>
 		</div>
-		<div class="swiper-pagination swiper-pagination-slider-home"></div>
-	</div>
+	<?php endif; ?>
 	
 	<div class='page_title'>Desenvolvimento <b>profissional</b></div>
 
@@ -69,7 +62,7 @@
 						<ul>
 							<li>EVOLUÇÃO DAS RECEITAS</li>
 							<li>EVOLUÇÃO DAS MARGENS</li>
-							<li>EVOLUÇÃO DO MS%, WS% e ACESSO%</li>
+							<li>Participação no cliente e no território</li>
 							<li>EVOLUÇÃO DO Nº DE CLIENTES</li>
 							<li>INDICE DE CHURN (PERDA DE CLIENTES)</li>
 							<li>EXTRATO CLIENTES ABERTOS VS FECHADOS</li>

@@ -14,6 +14,7 @@
 	align-items: center;
 	margin: 53px 3px 0 3px;
 	max-width: 255px;
+	text-decoration: none;
 }
 
 .gestao_estrategia_img {
@@ -28,31 +29,30 @@
 
 .gestao_estrategia_txt {
 	max-width: 100%;
-	height: 266px;
+	height: 280px;
 	font-family: Montserrat, sans-serig;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 22px;
 	letter-spacing: -0.24px;
-	padding-left: 26px;
+	padding: 0 26px;
 	width: 98%;
-	padding-right: 16px;
 	color: #FFF;
 	background: #0049b1;
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
-}
-
-.gestao_estrategia_txt h1 {
-	margin: 1em 0 0 0;
-	padding: 0;
-	color: #9ACA3C;
-	font-size: 16px;
-	font-weight: 700;
-	line-height: 19px;
-	letter-spacing: -0.225px;
-	text-transform: uppercase;
-	height: 3.8em;
+	
+	h1 {
+		margin: 1em 0 0 0;
+		padding: 0;
+		color: #9ACA3C;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 19px;
+		letter-spacing: -0.225px;
+		text-transform: uppercase;
+		height: 3.8em;
+	}
 }
 
 .ico_mercado {

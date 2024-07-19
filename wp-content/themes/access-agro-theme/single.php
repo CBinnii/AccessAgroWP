@@ -9,9 +9,9 @@
         </div>
     <?php } ?>
 
-    <div class="section blog blog-single">
+    <div class="single">
         <div class="container">
-            <h1 class="title-single"><?php echo get_the_title(); ?></h1>
+            <div class='page_title mt-0 mb-4'><b><?php echo get_the_title(); ?></b></div>
 
             <?php echo apply_filters('the_content', $post->post_content); ?>
         </div>

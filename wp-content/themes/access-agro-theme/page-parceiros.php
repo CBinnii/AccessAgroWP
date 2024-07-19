@@ -2,48 +2,41 @@
 	get_header();
 ?>
 
-    <!-- Swiper -->
-    <div class="swiper swiper-home">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/title_banner_1.png')">
-                <div class="container">
-                    <h1>CONSULTORIA EM GESTÃO <br>E TREINAMENTO PARA O AGRONEGÓCIO</h1>
-                </div>
+    <?php if( have_rows('banner') ): ?>
+        <div class="swiper swiper-home">
+            <div class="swiper-wrapper">
+                <?php
+                    while( have_rows('banner') ) : the_row();
+
+                    $imagem_banner = get_sub_field('imagem_banner');
+                    $texto_banner = get_sub_field('texto_banner');
+                ?>
+                    <div class="swiper-slide" style="background-image: url('<?php echo $imagem_banner; ?>')">
+                        <div class="container">
+                            <h1><?php echo $texto_banner; ?></h1>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
             </div>
-            <div class="swiper-slide" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/title_banner_2.png')">
-                <div class="container">
-                    <h1>CONSULTORIA EM GESTÃO <br>E TREINAMENTO PARA O AGRONEGÓCIO</h1>
-                </div>
-            </div>
-            <div class="swiper-slide" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/title_banner_6.png')">
-                <div class="container">
-                    <h1>CONSULTORIA EM GESTÃO <br>E TREINAMENTO PARA O AGRONEGÓCIO</h1>
-                </div>
-            </div>
-            <div class="swiper-slide" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/title_banner_3.png')">
-                <div class="container">
-                    <h1>CONSULTORIA EM GESTÃO <br>E TREINAMENTO PARA O AGRONEGÓCIO</h1>
-                </div>
-            </div>
+            <div class="swiper-pagination swiper-pagination-slider-home"></div>
         </div>
-        <div class="swiper-pagination swiper-pagination-slider-home"></div>
-    </div>
+    <?php endif; ?>
     
     <div class='page_title'>Nossos <b>Clientes</b></div>
 
-    <!-- CLIENT LOGOS -->
-    <div class='client_logos'>
-        <img src='<?php echo get_stylesheet_directory_uri(); ?>/images/clientes_cotram.jpeg' />
-        <img src='<?php echo get_stylesheet_directory_uri(); ?>/images/clientes_ourofino.png' />
-        <img src='<?php echo get_stylesheet_directory_uri(); ?>/images/clientes_biotrop.png' />
-        <img src='<?php echo get_stylesheet_directory_uri(); ?>/images/clientes_corus.png' />
-        <img src='<?php echo get_stylesheet_directory_uri(); ?>/images/clientes_simbiose.png' />
-        <img src='<?php echo get_stylesheet_directory_uri(); ?>/images/clientes_adama.svg' />
-        <img src='<?php echo get_stylesheet_directory_uri(); ?>/images/clientes_sumitomo-chemical.png' />
-        <img src='<?php echo get_stylesheet_directory_uri(); ?>/images/clientes_andav.svg' />
-        <img src='<?php echo get_stylesheet_directory_uri(); ?>/images/clientes_bayer.svg' />
-        <img src='<?php echo get_stylesheet_directory_uri(); ?>/images/clientes_massari.png' />
-    </div>
+	<?php 
+		$images = get_field('clientes');
+		$size = 'full';
+
+		if( $images ):
+	?>
+        <!-- CLIENT LOGOS -->
+        <div class='client_logos'>
+            <?php foreach( $images as $image_id ): ?>
+                <img src="<?php echo $image_id; ?>">
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
 
     <!-- TITLE -->
     <div class='page_title'>Nossos <b>Parceiros</b></div>

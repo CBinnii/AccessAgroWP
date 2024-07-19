@@ -1,4 +1,7 @@
 <?php 
+    /**
+     * Template Name: Página Inicial
+     **/
 	get_header();
 ?>
 
