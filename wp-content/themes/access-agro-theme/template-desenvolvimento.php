@@ -49,7 +49,31 @@
 						Qual a melhor combinação para a sua equipe? Podemos personalizar o melhor plano de acordo com a
 						sua necessidade e disponibilidade de tempo.
 					</div>
-					<div class='professional_jigsaw'></div>
+					<div class='professional_jigsaw'>
+						<?php
+							$catBody = get_category_by_slug('desenvolvimento-profissional'); 
+							$args = array(
+								'post_type' => 'post',
+								'status' => 'publish',
+								'showposts' => -1,
+								'cat' => $catBody->term_id,
+								'orderby' => 'date',
+								'order' => 'ASC'
+							);
+
+							$more = new WP_Query( $args );
+
+							if (!empty($more->posts)): ?>
+								<div class="jigsaw_items">
+									<?php foreach ( $more->posts as $post ): ?>
+											<div class="item">
+												<a href="<?php echo $post->post_name; ?>"></a>
+											</div>
+									<?php endforeach; ?>
+								</div>
+							<?php endif;
+						wp_reset_query(); ?>
+					</div>
 				</div>
 				<hr>
 				<div class='professional_block'>

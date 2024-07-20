@@ -46,6 +46,10 @@
 	position: relative;
 	width: 630px;
 	height: 300px;
+
+	@media screen and (max-width: 660px) {
+		height: 200px;
+	}
 }
 
 .professional_container hr {

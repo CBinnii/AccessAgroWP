@@ -4,17 +4,8 @@
 			<div class='contato_form_container'>
 				<div class='contato_header'><b>Qual seu objetivo?</b><br>Conte-nos como podemos lhe ajudar!</div>
 				<div class='contato_form'>
-					<form id="contact-form" method="post" action="send_contact.php">
-						<input type="text" id="nome" name="nome" autocomplete="name" placeholder="Nome*">
-						<br>
-						<input type="email" id="email" name="email" autocomplete="email" placeholder="E-mail*">
-						<br>
-						<input type="text" id="assunto" name="assunto" placeholder="Assunto*">
-						<br>
-						<textarea id="mensagem" name="mensagem" placeholder="Mensagem*"></textarea>
-						<br>
-						<input type="submit" value="Enviar">
-					</form>
+					<!-- <?php echo do_shortcode( '[contact-form-7 id="88f746d" title="Formulário de Contato"]' ); ?> -->
+					<?php echo do_shortcode( '[contact-form-7 id="6fbce97" title="Formulário de contato"]' ); ?>
 				</div>
 			</div>
 		</div>

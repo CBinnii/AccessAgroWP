@@ -1,25 +1,17 @@
 <?php 
-	get_header();
+	get_header('404');
 ?>
-        <section class="main">
-            <div class="section">
-                <div class="section-404">
-                    <div class="container">
-                        <div class="page-text">
-                            <h1 class="text-center">404</h1>
-                            <h3>Holy Moly</h3>
-                
-                            <p>We don’t know how you got here, but you have landed on the wrong page. </p>
-                            <p>Don’t worry, though — you can go back or use the navigation above to find your way.</p>
-            
-                            <div class="button">
-                                <a href="<?php echo get_home_url(); ?>" class="button-default primary">Back To Home</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+    <div class="page-404">
+        <div class="notfound">
+            <div class="notfound-404">
+                <h1>Oops!</h1>
+                <h2>404 - Página não encontrada</h2>
             </div>
-        </section>
+
+            <a href="#">Ir para o início</a>
+        </div>
+    </div>
 <?php
-	get_footer();
+	get_footer('cv');
 ?>

@@ -3,11 +3,6 @@
 
     $categories = get_the_category();
 ?>
-    <?php if (has_post_thumbnail( $post->ID ) ) { ?>
-        <div class="slider">
-            <div class="banner" style="background-image: url(<?php echo wp_get_attachment_url(get_post_thumbnail_id(), 'full');?>);"></div>
-        </div>
-    <?php } ?>
 
     <div class="single">
         <div class="container">
