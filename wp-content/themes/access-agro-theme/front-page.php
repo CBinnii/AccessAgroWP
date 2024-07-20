@@ -1,304 +1,228 @@
 <?php 
-	get_header('construction');
+    /**
+     * Template Name: Página Inicial
+     **/
+	get_header();
 ?>
-	<style>
-		body{
-			margin:0;
-			padding: 30px 0;
-			color:#333333;
-			background:#FFFFFF;
-			font: 300 18px/18px Roboto, sans-serif;
-		}
-		*,:after,:before{box-sizing:border-box}
-		.pull-left{float:left}
-		.pull-right{float:right}
-		.clearfix:after,.clearfix:before{content:'';display:table}
-		.clearfix:after{clear:both;display:block}
 
-		.machine-wrap{
-			top: 50%;
-			left: 50%;
-			width: 475px;
-			height: 145px;
-			position: absolute;
-			margin-top: -50px;
-			border-bottom: 5px solid #000000;
-			transform: translateX(-50%);
-		}
-		.machine{
-			width:475px;
-			height:145px;
-			padding-bottom:20px;
-		}
-		.machine .machine-roof,
-		.machine .machine-main{
-			margin:auto;
-		}
-		.machine-wrap .road .mud:before,
-		.machine-wrap .road .mud:after,
-		.machine .machine-roof .machine-silencer:before,
-		.machine .machine-roof .machine-silencer:after,
-		.machine .machine-body:before,
-		.machine .machine-body:after,
-		.machine .machine-main .machine-back:before,
-		.machine .machine-main .machine-back:after,
-		.machine .machine-main .machine-front:after{
-			content:'';
-			position:absolute;
-		}
-		.machine .machine-roof{
-			width:80px;
-			height:60px;
-			bottom:-1px;
-			position:relative;
-			background:#FFFFFF;
-			border:15px solid #000000;
-			border-bottom:none;
-		}
-		.machine .machine-roof .machine-silencer{
-			width:14px;
-			left:-50px;
-			height:12px;
-			bottom:-1px;
-			position:absolute;
-			background:#000000;
-		}
-		.machine .machine-roof .machine-silencer:before{
-			height:0;
-			bottom:100%;
-			width:inherit;
-			border:6px solid #000000;
-			border-top:4px solid transparent;
-			border-left:8px solid transparent;
-		}
-		.machine .machine-roof .machine-silencer:after{
-			left:4px;
-			width:5px;
-			height:12px;
-			bottom:100%;
-			background:inherit;
-			transform:skewY(-35deg);
-		}
-		.machine .machine-roof .machine-silencer .machine-smoke{
-			left:-5px;
-			width:16px;
-			height:16px;
-			bottom:20px;
-			border-radius:50%;
-			position:absolute;
-			background:#000000;
-			transform:scale(0);
-			animation:moveSmoke .5s linear infinite;
-		}
-		.machine-main{
-			height:60px;
-			width:185px;
-			position:relative;
-		}
-		.machine .machine-main .machine-body{
-			height:inherit;
-			width:inherit;
-			position:relative;
-			background:#000000;
-		}
-		.machine .machine-main .machine-body:before{
-			left:-15px;
-			width:30px;
-			height:inherit;
-			background:inherit;
-			transform:skewX(-20deg);
-		}
-		.machine .machine-main .machine-body:after{
-			bottom:0;
-			right:15px;
-			width:35px;
-			height:41px;
-			background:#FFFFFF;
-		}
-		.machine .machine-main .machine-back{
-			bottom:-1px;
-			width:75px;
-			height:45px;
-			position:absolute;
-		}
-		.machine .machine-main .machine-back:before{
-			width:75px;
-			height:45px;
-			background:#FFFFFF;
-			border-radius:50% 50% 0 0 / 85% 85% 0 0;
-		}
-		.machine .machine-main .machine-back:after{
-			top:50%;
-			left:50%;
-			width:60px;
-			height:60px;
-			border-radius:50%;
-			margin-top:-15px;
-			margin-left:-30px;
-			background:transparent;
-			border:15px solid #000000;
-		}
-		.machine .machine-main .machine-front{
-			z-index:1;
-			width:60px;
-			height:60px;
-			right:-24px;
-			bottom:-20px;
-			border-radius:50%;
-			position:absolute;
-			background:#000000;
-			border-top:2px solid #FFFFFF;
-		}
-		.machine .machine-main .machine-front:after{
-			top:50%;
-			left:50%;
-			width:80px;
-			height:20px;
-			margin-top:-10px;
-			margin-left:-40px;
-			background:inherit;
-			border:2px solid #FFFFFF;
-		}
-		.machine-wrap .road{
-			right:0;
-			bottom:0;
-			height:15px;
-			width:140px;
-			overflow:hidden;
-			position:absolute;
-		}
-		.machine-wrap .road .mud-wrap{
-			width:160px;
-			position:absolute;
-			animation:moveRoad .4s linear infinite;
-		}
-		.machine-wrap .road .mud{
-			bottom:0;
-			width:40px;
-			float:left;
-			height:15px;
-			position:relative;
-			display:inline-block;
-		}
-		.machine-wrap .road .mud:before,
-		.machine-wrap .road .mud:after{
-			width:20px;
-			height:20px;
-			border-radius:4px;
-			background:#000000;
-			transform:rotate(45deg);
-		}
-		.machine-wrap .road .mud:before{
-			left:0;
-			bottom:-17px;
-		}
-		.machine-wrap .road .mud:after{
-			right:0;
-			bottom:-20px;
-		}
+	<?php if( have_rows('banner') ): ?>
+		<div class="swiper swiper-home">
+			<div class="swiper-wrapper">
+				<?php
+					while( have_rows('banner') ) : the_row();
 
-		.machine-wrap .machine-roof,
-		.machine-wrap .machine-body,
-		.machine-wrap .machine-silencer,
-		.machine-wrap .machine-back:before,
-		.machine-wrap .machine-front{
-			animation:upDown .6s linear infinite;
-		}
-		.machine-wrap .machine-silencer{
-			animation-duration:.4s;
-		}
-		.machine-wrap .machine-front{
-			animation-duration:.3s;
-		}
-		.machine-wrap .machine-back{
-			animation:upDown .8s linear infinite;
-		}
-		@keyframes moveRoad{
-			0%{
-				right:-40px;
-			}
-			100%{
-				right:0;
-			}
-		}
-		@keyframes moveSmoke{
-			0%{
-				opacity:0;
-				transform:scale(0) translate(0);
-			}
-			60%{
-				transform:scale(.5) translate(0);
-			}
-			100%{
-				opacity:.6;
-				transform:scale(1) translate(-10px,-40px);
-			}
-		}
-		@keyframes upDown{
-			0%{
-				transform:translateY(0);
-			}
-			50%{
-				transform:translateY(2px);
-			}
-			100%{
-				transform:translateY(0);
-			}
-		}
-		.text_left {position:absolute;
-		top:40%;
-		left:5%;
-			width:50%;
-		height:80%;
-			text-align:left;
-		}
-		.text_right {position:absolute;
-			top:50%;
-			right:5%;
-			width:50%;
-		height:80%;
-			text-align:right;
-		}
-		.text_center {
-			width:100%;
-		height:20%;
-			text-align:center;
-		}
-	</style>
+					$imagem_banner = get_sub_field('imagem_banner');
+					$texto_banner = get_sub_field('texto_banner');
+				?>
+					<div class="swiper-slide" style="background-image: url('<?php echo $imagem_banner; ?>')">
+						<div class="container">
+							<h1><?php echo $texto_banner; ?></h1>
+						</div>
+					</div>
+				<?php endwhile; ?>
+			</div>
+			<div class="swiper-pagination swiper-pagination-slider-home"></div>
+		</div>
+	<?php endif; ?>
 
-	<div class="machine-wrap">
-		<div class="machine">
-			<div class="machine-roof">
-				<div class="machine-silencer">
-					<div class="machine-smoke"></div>
+	<!-- PLAIN TEXT -->
+	<div class='page_title'><b>Nosso</b> objetivo</div>
+	<div class='plain_text home_intro'>
+		<?php echo apply_filters('the_content', $post->post_content); ?>
+	</div>
+
+	<!-- ILLUSTRATIONS -->
+	<div class='illustrations'>
+		<div class='home_left'>
+			<div class='home_left_strip'></div>
+			<div class='home_left_ilustration'></div>
+			<div class='home_left_text'>
+				<h1>Gestão e estratégia de negócios</h1>
+				Consultoria em estratégia e gestão de marketing e vendas na indústria de insumos agrícolas, visando o
+				incremento da competitividade dos negócios e melhoria nos resultados
+			</div>
+		</div>
+		<div class='home_right'>
+			<div class='home_right_strip'></div>
+			<div class='home_right_ilustration'></div>
+			<div class='home_right_text'>
+				<h1>Desenvolvimento profissional</h1>
+				Realização de treinamentos customizados para gestores e força de vendas,  de acordo com a visão
+				estratégica da indústria,  distribuidores e clientes.
+			</div>
+		</div>
+	</div>
+
+	<!-- TITLE -->
+	<div class='page_title'>Gestão e <b>estratégica de negócios</b></div>
+
+	<!-- HOME CAROUSEL -->
+	<div class='home_carousel_window' id='home_carousel_window'>
+		<div class='link_image home_arrow home_arrow_left' onclick='set_previous_solution()'></div>
+		<div class='link_image home_arrow home_arrow_right' onclick='set_next_solution()'></div>
+	</div>
+	<div class='dark_green_button' onclick="window.location.href='gestao-e-estrategia-de-negocios'">Conheça todas as soluções</div>
+
+	<!-- HOME DESENVOLVIMENTO PROFISSIONAL -->
+	<div class='home_desenvolvimento_profissional'>
+		<div class='page_title home_title'>Desenvolvimento <b>profissional</b></div>
+		<div class='bold_text'>
+			Os módulos de treinamento surgiram de uma demanda crescente por gestão e profissionalização, tais como:
+			<ul>
+				<li>Alto “turnover” das equipes de vendas</li>
+				<li>Melhorar a eficiência e profissionalismo no atendimento</li>
+				<li>Otimização do custo<br>operacional</li>
+				<li>Aumentar a fidelização dos clientes</li>
+			</ul>
+		</div>
+		<!-- TWO COLUMNS -->
+		<div class='home_board'>
+			<div class='professional_container'>
+				<div class='professional_block'>
+					<div class='professional_text'>
+						<b>Conhecimento técnico de uma equipe de Alta Performance.</b>
+						<br><br>
+						Qual a melhor combinação para a sua equipe? Podemos personalizar o melhor plano de acordo com a
+						sua necessidade e disponibilidade de tempo.
+					</div>
+					<div class='professional_jigsaw'>
+						<?php
+							$catBody = get_category_by_slug('desenvolvimento-profissional'); 
+							$args = array(
+								'post_type' => 'post',
+								'status' => 'publish',
+								'showposts' => -1,
+								'cat' => $catBody->term_id,
+								'orderby' => 'date',
+								'order' => 'ASC'
+							);
+
+							$more = new WP_Query( $args );
+
+							if (!empty($more->posts)): ?>
+								<div class="jigsaw_items">
+									<?php foreach ( $more->posts as $post ): ?>
+											<div class="item">
+												<a href="<?php echo $post->post_name; ?>"></a>
+											</div>
+									<?php endforeach; ?>
+								</div>
+							<?php endif;
+						wp_reset_query(); ?>
+					</div>
+				</div>
+				<hr>
+				<div class='professional_block'>
+					<div class='professional_text'>
+						<b>Indicadores de Performance</b>
+						<br><br>
+						A customização dos módulos acarretará na<br>definição das métricas a serem monitoradas.
+					</div>
+					<div class='indicadores_box'>
+						<ul>
+							<li>EVOLUÇÃO DAS RECEITAS</li>
+							<li>EVOLUÇÃO DAS MARGENS</li>
+							<li>Participação no cliente e no território</li>
+							<li>EVOLUÇÃO DO Nº DE CLIENTES</li>
+							<li>INDICE DE CHURN (PERDA DE CLIENTES)</li>
+							<li>EXTRATO CLIENTES ABERTOS VS FECHADOS</li>
+							<li>TICKET MÉDIO DOS CLIENTES (U$ e Nr PRODUTOS)</li>
+							<li>INDICE DE RECOMPRA</li>
+							<li>NPS - NET PROMOTE SCORE</li>
+							<li>ACURÁCIA DOS PLANOS DE AÇÃO</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<div class="machine-main">
-				<div class="machine-body"></div>
-				<div class="machine-back"></div>
-				<div class="machine-front"></div>
-			</div>	
+			<div class='green_button' onclick="window.location.href='desenvolvimento-profissional'">saiba mais</div>
 		</div>
-		<div class="road">
-			<div class="mud-wrap clearfix">
-				<div class="mud"></div>
-				<div class="mud"></div>
-				<div class="mud"></div>
-				<div class="mud"></div>
+	</div>
+
+	<!-- TITLE -->
+	<div class='page_title'>Conheça nosso<br><b>Portfólio de cases de sucesso</b></div>
+	<div class="section-portfolio">
+		<div class="container">
+			<div class="box-what-portfolio">
+				<div class="swiper swiper-portfolio">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="box-portfolio">
+								<p>Treinamento da política de acesso ao mercado ao time de negócios, assegurando engajamento pleno e confiança com as normas e procedimentos</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box-portfolio">
+								<p>Construção e validação de programas de relacionamento para distribuidores e cooperativa, incrementando agilidade e assertividade no uso dos recursos</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box-portfolio">
+								<p>Treinamento da Força de vendas na busca de um atendimento mais profissional</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box-portfolio">
+								<p>Pesquisa de satisfação da equipe de vendas diretamente com os produtores, melhorando a percepção da empresa quanto ao perfil e qualidade técnica do seu time</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box-portfolio">
+								<p>Criação e implementação de planos de negócios individuais com parceiros comerciais, proporcionando uma relação mais sólida e longeva</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box-portfolio">
+								<p>Planejamento estratégico para os próximos 3 anos, identificando as diretrizes prioritárias de recursos e investimentos</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box-portfolio">
+								<p>Dimensionamento da força de vendas, ajustando o modelo comercial, o tamanho do território, seu ponto de equilíbrio e o perfil adequado dos vendedores em relação a cada território</p>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="box-portfolio">
+								<p>Discussão e implementação de melhorias na afetividade da força de vendas, preparando-os para uma nova fase de inovação</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="swiper-pagination swiper-pagination-slider-portfolio"></div>
 			</div>
 		</div>
 	</div>
 
-	<div class="text_center">
-		<h1>
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/header_logo.png" alt="Access Agro Logo">
-		</h1>
-		<h3 style="margin-bottom: 16px">Nosso site está em construção para melhor atendê-lo</h3>
+	<?php 
+		$images = get_field('clientes');
+		$size = 'full';
 
-		<h5 style="margin-bottom: 16px">Fique atento as novidades!</h5>
+		if( $images ):
+	?>
+		<div class="section-clients">
+			<div class="clients">
+				<!-- Swiper -->
+				<div class="clients-bg">
+					<div class="container">
+						<div class="swiper swiper-clients">
+							<div class="swiper-wrapper">
+								<?php foreach( $images as $image_id ): ?>
+									<div class="swiper-slide">
+										<img src="<?php echo $image_id; ?>" alt="Cliente cotram">
+									</div>
+								<?php endforeach; ?>
+							</div>
+							<div class="swiper-button-next swiper-button-next-clients"></div>
+							<div class="swiper-button-prev swiper-button-prev-clients"></div>
+						</div>
+					</div>
+				</div>
 
-		<p>Caso seja necessário: entre em contato pelo nosso e-mail: <a href="mailto:guido.visintin@accessagro.com.br">guido.visintin@accessagro.com.br</a></p>
-	</div>
+				<div class="swiper-pagination swiper-pagination-slider-clients"></div>
+			</div>
+		</div>
+	<?php endif; ?>
+
 <?php
-	// get_footer();
+	get_footer();
 ?>
